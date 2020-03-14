@@ -37,20 +37,20 @@ int main() {
   /**
    * TODO: Initialize the pid variable.
    */
-  double Kp = 0.0;
+  double Kp = -0.1;
   double Ki = 0.0;
-  double Kd = 0.0;
+  double Kd = -1.0;
   
   pid.Init(Kp, Ki, Kd);
 
-  int no_steps = 200;
-  int counter = -199;
+  int no_steps = 2000;
+  int counter = -1999;
  
   double penalty = 0.0;
 
-  double delKp = 1.0;
-  double delKi = 1.0;
-  double delKd = 1.0;
+  double delKp = 0.1;
+  double delKi = 0.1;
+  double delKd = 0.1;
 
   double error = 0.0;
   double best_error = 0.0;
@@ -82,7 +82,7 @@ int main() {
               penalty += 5.4;
           }
 
-	  if (cte<-5.4) {
+	  if (ctei < -5.4) {
 	      penalty -= 5.4;
 	  }
 	  
