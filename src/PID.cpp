@@ -36,6 +36,6 @@ double PID::TotalError() {
   /**
    * TODO: Calculate and return the total error
    */
-  double total_error = Kp*p_error + Ki*i_error + Kd*d_error;
+  double total_error = -1*Kp*p_error - Ki*i_error - Kd*d_error;
   return total_error;  // TODO: Add your total error calc here!
 }
